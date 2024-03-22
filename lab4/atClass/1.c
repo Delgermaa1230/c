@@ -5,12 +5,11 @@ int main() {
     int i;
     for (i = 0; i < 10; i++)
     {
-        printf("%d dahi toog oruulna uu: \n", i+1);
-        scanf("%d", &array[i]);
+        array[i] = i+1;
     }
     for ( i = 0; i < 10; i++)
     {
-        printf("%d dahi too : %d \n", i+1, array[i]);
+        printf("%d ", array[i]);
     }
     
 }
