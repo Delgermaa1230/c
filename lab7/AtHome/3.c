@@ -10,7 +10,7 @@ int main() {
     fgets(uguulber, sizeof(uguulber), stdin);
 
     printf("Oloh ug oruul: ");
-    scanf("%s", ug);
+    scanf("%s", &ug);
 
     char *bairlal = strstr(uguulber, ug);
     if (bairlal != NULL) {
