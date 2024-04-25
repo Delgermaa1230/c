@@ -12,9 +12,9 @@ void read_students(Student a[], int n) {
     printf("Suragchiin medeelliig oruulna uu:\n");
     for (int i = 0; i < n; i++) {
         printf("Student %d:\n", i + 1);
-        printf("FName: ");
+        printf("Ner: ");
         scanf("%s", a[i].fname);
-        printf("LName: ");
+        printf("Ovog: ");
         scanf("%s", a[i].lname);
         printf("ID: ");
         scanf("%s", a[i].id);

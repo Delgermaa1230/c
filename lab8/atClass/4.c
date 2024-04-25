@@ -58,18 +58,18 @@ int main() {
     struct Rational r2 = {3, 9};
 
     struct Rational sum = add(r1, r2);
-    struct Rational difference = subtract(r1, r2);
-    struct Rational product = multiply(r1, r2);
-    struct Rational quotient = divide(r1, r2);
+    struct Rational yalgavar = subtract(r1, r2);
+    struct Rational urjver = multiply(r1, r2);
+    struct Rational huvaalt = divide(r1, r2);
 
     printf("Nemeh: ");
     print_rational(sum);
     printf("Hasah: ");
-    print_rational(difference);
+    print_rational(yalgavar);
     printf("Urjver: ");
-    print_rational(product);
+    print_rational(urjver);
     printf("Huvaah: ");
-    print_rational(quotient);
+    print_rational(huvaalt);
 
     return 0;
 }

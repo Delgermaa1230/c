@@ -1,12 +1,16 @@
-// C program to show the unexpected behaviour
-// when %s is used in printf
 #include <stdio.h>
-int main()
-{
-	// % is intentionally put here to show the unexpected
-	// behaviour when %s is used in printf
-	printf("Geek%sforGeek%s");
-	getchar();
-	return 0;
+void print(int a, int b) {
+	 a = 10;
+	 b = 20;
+	 printf("%d", a+b);
+}
+int main() {
+	int c=0;
+	int a=2;
+	int b=3;
+	print(a,b);
+	printf("%d",a+b);
+
+
 }
 
