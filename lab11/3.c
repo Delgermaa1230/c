@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_RANGE 101 // Range of numbers from 0 to 100
+#define MAX_RANGE 101 
 
 void countingSort(int arr[], int n) {
     int output[n];
@@ -37,7 +37,7 @@ int main() {
     }
     fclose(file);
 
-    int n = i; // Number of elements read from file
+    int n = i; 
 
     countingSort(numbers, n);
 

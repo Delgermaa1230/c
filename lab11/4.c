@@ -1,54 +1,53 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_DIGITS 3 // Maximum number of digits in the given range (0-100)
-#define BASE 10       // Base for the radix sort
+#define MAX_DIGITS 3 
 
-// Function to perform counting sort based on a specific digit
+//Todorhoi tsipr deer suurilan count sort iig guitsetgeh function
 void countingSort(int arr[], int n, int exp) {
     int output[n];
-    int count[BASE] = {0};
+    int count[10] = {0};
     int i;
 
-    // Count occurrences of digits at a given position
+    // Tuhain bairlal deer baigaa tsipriin davtamjiig tooloh
     for (i = 0; i < n; i++)
-        count[(arr[i] / exp) % BASE]++;
+        count[(arr[i] / exp) % 10]++;
 
-    // Adjust count array to obtain correct positions
-    for (i = 1; i < BASE; i++)
+    // Zov bairlaliig olohiin tuld array g tohiruulj uguh
+    for (i = 1; i < 10; i++)
         count[i] += count[i - 1];
 
-    // Build the output array
+    // Output array
     for (i = n - 1; i >= 0; i--) {
-        output[count[(arr[i] / exp) % BASE] - 1] = arr[i];
-        count[(arr[i] / exp) % BASE]--;
+        output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+        count[(arr[i] / exp) % 10]--;
     }
 
-    // Copy the output array to the original array
+    // Output array baigaagaa jinhene array daa huulah
     for (i = 0; i < n; i++)
         arr[i] = output[i];
 }
 
-// Function to perform radix sort
+// Radix sortiig hiih function
 void radixSort(int arr[], int n) {
     int max = arr[0];
     int i;
 
-    // Find the maximum number in the array
+    // Array baigaa hamgiin ih elementiig oloh
     for (i = 1; i < n; i++) {
         if (arr[i] > max)
             max = arr[i];
     }
 
-    // Perform counting sort for each digit from the least significant to the most significant
-    for (int exp = 1; max / exp > 0; exp *= BASE)
+    // Tsipr bur deer count sort hiih
+    for (int exp = 1; max / exp > 0; exp *= 10)
         countingSort(arr, n, exp);
 }
 
 int main() {
     FILE *file = fopen("numbers.txt", "r");
     if (file == NULL) {
-        printf("Unable to open file.\n");
+        printf("Error in opening file.\n");
         return 1;
     }
 
@@ -59,11 +58,11 @@ int main() {
     }
     fclose(file);
 
-    int n = i; // Number of elements read from file
+    int n = i; 
 
     radixSort(numbers, n);
 
-    printf("Sorted numbers in descending order:\n");
+    printf("Buurah erembeer erembelsen n:\n");
     for (i = n - 1; i >= 0; i--)
         printf("%d ", numbers[i]);
     printf("\n");
