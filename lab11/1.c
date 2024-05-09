@@ -43,12 +43,14 @@ void writeData(const char *filename, Student students[], int numStudents) {
 
 void selectionSort(Student students[], int numStudents) {
     for (int i = 0; i < numStudents - 1; ++i) {
+        //max element indexiig oloh erembelegdeegui hesgiin
         int maxIndex = i;
         for (int j = i + 1; j < numStudents; ++j) {
             if (students[j].grade > students[maxIndex].grade) {
                 maxIndex = j;
             }
         }
+        //i elementtei max elementiig solih
         if (maxIndex != i) {
             Student temp = students[i];
             students[i] = students[maxIndex];
@@ -64,6 +66,7 @@ void bubbleSort(Student students[], int numStudents) {
         swapped = 0;
         for (int j = 0; j < numStudents - i - 1; ++j) {
             if (students[j].grade < students[j + 1].grade) {
+                // ehnii elemtees darragin element n ih bol bairiig n solix
                 Student temp = students[j];
                 students[j] = students[j + 1];
                 students[j + 1] = temp;
@@ -80,6 +83,8 @@ void insertionSort(Student students[], int numStudents) {
     for (int i = 1; i < numStudents; ++i) {
         Student key = students[i];
         int j = i - 1;
+        // elementiin erembelegdsen arrayiin araaas yavsaar tulhuur utgaas ih utga olmogts tuunii daraagin elementtei tulhuur utgiig solino
+        // nuhtsul biyeltel ug uildliig davtana 
         while (j >= 0 && students[j].grade < key.grade) {
             students[j + 1] = students[j];
             j = j - 1;
